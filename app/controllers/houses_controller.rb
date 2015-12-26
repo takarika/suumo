@@ -61,6 +61,14 @@ class HousesController < ApplicationController
     end
   end
 
+  # お気に入りに追加する
+  def favorite
+  end
+
+  # お気に入りから解除する
+  def unfavorite
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_house
