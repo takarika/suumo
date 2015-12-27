@@ -19,6 +19,16 @@
       <tr>
         <td><%= house.name %></td>
         <td><%= image_tag(house.image_url) if house.image? %></td>
+        <td>
+        <% house.favorites do |favorite| %>
+          <%= favorite %>
+        <% end %>
+        <% if Favorite.find_by(house_id: house.id, user_id: current_user.id) %>
+          <td><%= link_to '☆　お気に入り解除', house_unfavorite_path(house), method: :delete %></td>
+        <% else %>
+          <td><%= link_to '★　お気に入りに追加', house_favorite_path(house), method: :post %></td>
+        <% end %>
+        </td>
         <td><%= link_to 'Show', house %></td>
         <td><%= link_to 'Edit', edit_house_path(house) %></td>
         <td><%= link_to 'Destroy', house, method: :delete, data: { confirm: 'Are you sure?' } %></td>

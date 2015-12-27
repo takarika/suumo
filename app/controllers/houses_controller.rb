@@ -63,10 +63,18 @@ class HousesController < ApplicationController
 
   # お気に入りに追加する
   def favorite
+    # ActiveRecord:Proxyを使った方がよいかも
+    favorite = Favorite.create(user_id: current_user.id, house_id: params[:house_id])
+
+    redirect_to houses_url
   end
 
   # お気に入りから解除する
   def unfavorite
+    favorite = Favorite.find_by(user_id: current_user.id, house_id: params[:house_id])
+    favorite.destroy
+
+    redirect_to houses_url
   end
 
   private
