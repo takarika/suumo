@@ -12,4 +12,20 @@
  *
  *= require_tree .
  *= require_self
+ *= require material
  */
+
+header {
+  background-color: #519C00 !important;
+  color: #FFF !important;
+}
+
+.mdl-button--accent.mdl-button--accent.mdl-button--raised,
+.mdl-button--accent.mdl-button--accent.mdl-button--fab {
+  background-color: #519C00 !important;
+}
+
+.mdl-button--accent.mdl-button--accent.mdl-button--raised a,
+.mdl-button--accent.mdl-button--accent.mdl-button--fab a {
+  color: #FFF !important;
+}
