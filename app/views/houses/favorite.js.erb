@@ -1,0 +1,1 @@
+$(".houses-<%= @house.id %>").html('<%= j(link_to image_tag("star10.gif", :border => "0", :alt => "お気に入り登録",class: "star"), house_unfavorite_path(@house.id), method: :delete, remote: true, class: "houses-#{@house.id} rikako") %>');
