@@ -1,0 +1,1 @@
+$(".houses-<%= @house.id %>").html('<%= j(link_to("☆　お気に入り解除", house_unfavorite_path(@house.id), method: :delete, remote: true, class: "houses-#{@house.id}")) %>');

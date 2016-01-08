@@ -1,0 +1,1 @@
+$(".houses-<%= @house.id %>").html('<%= j(link_to("★　お気に入りに追加", house_favorite_path(@house.id), method: :post, remote: true)) %>');
