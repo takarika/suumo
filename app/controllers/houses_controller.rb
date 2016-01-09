@@ -71,8 +71,8 @@ class HousesController < ApplicationController
   # お気に入りから解除する
   def unfavorite
     favorite = Favorite.find_by(user_id: current_user.id, house_id: params[:house_id])
-    @house = House.find_by(id: params[:house_id])
     favorite.destroy
+    @house = House.find_by(id: params[:house_id])
   end
 
   private

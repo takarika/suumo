@@ -18,6 +18,13 @@
     <%= f.label :detail %><br>
     <%= f.text_field :detail %>
   </div>
+  
+<canvas id="simple_sketch" width="800" height="300"></canvas>
+<script type="text/javascript">
+  $(function() {
+    $('#simple_sketch').sketch();
+  });
+</script>
 
   <div class="actions">
     <%= f.submit %>
