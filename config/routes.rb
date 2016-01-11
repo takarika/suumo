@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  # devise_for :users
+
   root to: "houses#index"
 
   resources :houses do
@@ -7,6 +7,6 @@ Rails.application.routes.draw do
     delete :unfavorite
   end
 
+  devise_for :users
   resources :users, only: [:show]
-
 end
