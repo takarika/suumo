@@ -2,12 +2,17 @@
 
 <p>
   <strong>Name:</strong>
-  <%= @house.name %>
-  <strong>Image:</strong>
+  <%= @house.name %><br>
+  <strong>Image:</strong><br>
   <%= image_tag(@house.image_url) if @house.image? %>
 </p>
-<p>詳細</p>
-  <%= @house.detail %>
+<strong>詳細</strong><br>
+  <%= @house.detail %><br>
+
+<a href="http://suumo.jp/" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="color: white;background-color: #519C00;" role="button">りかこが間取りを検索</a>
+
+
+</div><br>
 
 <%= link_to 'Edit', edit_house_path(@house) %> |
 <%= link_to 'Back', houses_path %>

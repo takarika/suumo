@@ -1,10 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 
-<%= link_to '新規投稿', new_house_path %>
+<%= link_to '間取りをお絵描き', new_house_path %>
 
 <% @houses.each do |house| %>
   <%= render 'houses/house', house: house %>
 <% end %>
 
-<%= link_to 'New House', new_house_path %>
+<%= link_to '間取りをお絵描き', new_house_path %>

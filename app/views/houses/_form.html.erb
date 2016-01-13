@@ -1,3 +1,7 @@
+<script>
+  OEKAKI_URL = "<%= @house.image %>";
+</script>
+
 <%= form_for(@house) do |f| %>
   <% if @house.errors.any? %>
     <div id="error_explanation">
@@ -14,17 +18,19 @@
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
-    <%= f.file_field :image %><br>
+    <%= f.hidden_field :image %><br>
+    <%= f.hidden_field :remote_image_url %><br>
     <%= f.label :detail %><br>
     <%= f.text_field :detail %>
   </div>
-  
-<canvas id="simple_sketch" width="800" height="300"></canvas>
-<script type="text/javascript">
-  $(function() {
-    $('#simple_sketch').sketch();
-  });
-</script>
+
+  <canvas id="simple_sketch" width="800" height="300"></canvas>
+
+  <script type="text/javascript">
+    $(function() {
+      $('#simple_sketch').sketch();
+    });
+  </script>
 
   <div class="actions">
     <%= f.submit %>

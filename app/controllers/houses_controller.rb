@@ -1,6 +1,8 @@
 class HousesController < ApplicationController
   before_action :set_house, only: [:show, :edit, :update, :destroy]
 
+  include CarrierwaveBase64Uploader
+
   # GET /houses
   # GET /houses.json
   def index
@@ -26,6 +28,9 @@ class HousesController < ApplicationController
   def create
     @house = House.new(house_params)
 
+    image_data = base64_conversion(params[:house][:remote_image_url])
+    @house.image = image_data
+
     respond_to do |format|
       if @house.save
         format.html { redirect_to @house, notice: 'House was successfully created.' }
@@ -40,6 +45,10 @@ class HousesController < ApplicationController
   # PATCH/PUT /houses/1
   # PATCH/PUT /houses/1.json
   def update
+    image_data = base64_conversion(params[:house][:remote_image_url])
+    params[:house][:image] = image_data
+    params[:house][:remote_image_url] = nil
+
     respond_to do |format|
       if @house.update(house_params)
         format.html { redirect_to @house, notice: 'House was successfully updated.' }

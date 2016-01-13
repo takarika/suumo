@@ -22,7 +22,8 @@ header {
 
 .mdl-button--accent.mdl-button--accent.mdl-button--raised,
 .mdl-button--accent.mdl-button--accent.mdl-button--fab {
-  background-color: #519C00 !important;
+  background-color:  #519C00 !important;
+  color: #FFF !important;
 }
 
 .mdl-button--accent.mdl-button--accent.mdl-button--raised a,
