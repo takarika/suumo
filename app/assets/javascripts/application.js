@@ -13,5 +13,15 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require framework7.min
+//= require sketch
 //= require_tree .
-//= require material
+
+// var myApp=new Framework7();
+//
+// var $$=Dom7;
+//
+// var view1 = myApp.addView('#view-1');
+// var view2 = myApp.addView('#view-2', { dynamicNavbar:true });
+// var view3 = myApp.addView('#view-3');
+// var view4 = myApp.addView('#view-4');

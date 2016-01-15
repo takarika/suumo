@@ -2,34 +2,73 @@
 <html>
 <head>
   <title>Madoomo</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
   <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.light_green-green.min.css" />
 </head>
 <body>
+<div class="statusbar-overlay"></div>
+<div class="panel-overlay"></div>
 
-<div class="mdl-layout mdl-js-layout">
-  <header class="mdl-layout__header mdl-layout__header--transparent">
-    <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">MADOOMO</span>
-      <div class="mdl-layout-spacer"></div>
-      <nav class="mdl-navigation">
-        <%= link_to 'マイページ', user_path(current_user), class: 'mdl-navigation__link' %>
-      </nav>
-    </div>
-  </header>
-  <div class="mdl-layout__drawer">
-    <span class="mdl-layout-title">M</span>
-    <nav class="mdl-navigation">
-        <%= link_to 'マイページ', user_path(current_user), class: 'mdl-navigation__link' %>
-    </nav>
+<div class="panel panel-left panel-reveal">
+  <div class="content-block">
+    <p>Left panel content goes here</p>
   </div>
-  <main class="mdl-layout__content">
+</div>
 
-  <%= yield %>
+<div class="panel panel-right panel-cover">
+  <div class="content-block">
+    <p>Right panel content goes here</p>
+  </div>
+</div>
 
-  </main>
+<div class="views tabs toolbar-through">
+  <div id="view-1" class="view view-main tab active">
+    <div class="pages">
+
+      <div class="navbar">
+          <div class="navbar-inner">
+            <div class="left">
+              <a href="#" class="link"></a>
+            </div>
+            <div class="center">
+              <a href="http://suumo.jp/" class="link">MADOOMO</a>
+            </div>
+            <div class="right">
+              <a href="#" class="link"></a>
+            </div>
+          </div>
+      </div>
+
+      <div data-page="index-1" class="page">
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+
+  <div class="toolbar tabbar tabbar-labels">
+    <div class="toolbar-inner">
+      <%= link_to houses_path, class: 'tab-link active' do %>
+        <i class="icon tabbar-demo-icon-1"></i> <span class="tabbar-label">間取り</span>
+      <% end %>
+
+      <%= link_to new_house_path, class: 'tab-link' do %>
+        <i class="icon tabbar-demo-icon-2"></i><span class="tabbar-label">投稿</span>
+      <% end %>
+
+      <%= link_to user_path(current_user), class: 'tab-link' do %>
+        <i class="icon tabbar-demo-icon-3"></i><span class="tabbar-label">Mypage</span>
+      <% end %>
+    </div>
+  </div>
 </div>
 
 </body>
