@@ -90,3 +90,16 @@ i.tabbar-demo-icon-4 {
 icon tabbar-demo-icon-1 {
   color: #FFF;
 }
+
+.item-title{
+  color: black;
+}
+
+#simple_sketch{
+  background-color: #FFF;
+  min-width: 340px;
+  min-height: 340px;
+
+  height: 100%;
+  width: 100%;
+}

@@ -24,11 +24,21 @@
     <%= f.text_field :detail %>
   </div>
 
-  <canvas id="simple_sketch" width="800" height="300"></canvas>
+  <br/>
+
+  <div class="oekaki">
+    <canvas id="simple_sketch"></canvas>
+  </div>
 
   <script type="text/javascript">
     $(function() {
       $('#simple_sketch').sketch();
+      
+      var w = $('.oekaki').width();
+      var h = $('.oekaki').height();
+      $('#simple_sketch').attr('width', w);
+      $('#simple_sketch').attr('height', h);
+
     });
   </script>
 
