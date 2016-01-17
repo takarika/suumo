@@ -1,21 +1,32 @@
 <div class="page-content">
   <div class="content-block">
+    <br>
     <div class="buttons-row">
-      <a href="#tab1" class="tab-link active button"class="show-tab-1">お気に入り</a>
-      <a href="#tab2" class="tab-link button"class="show-tab-2">投稿一覧</a>
+      <a href="#tab1" class="tab-link active button"class="show-tab-1">投稿一覧</a>
+      <a href="#tab2" class="tab-link button"class="show-tab-2">お気に入り</a>
     </div>
 
     <div class="tabs">
       <div id="tab1" class="tab active">
         <div class="content-block">
-          <% @houses.each do |house| %>
-            <%= render 'houses/house', house: house %>
-          <% end %>
+          <div class="list-block media-list">
+            <ul>
+              <% @houses.each do |house| %>
+                <%= render 'houses/house', house: house %>
+              <% end %>
+            </ul>
+          </div>
         </div>
       </div>
       <div id="tab2" class="tab">
         <div class="content-block">
-          <%= link_to '間取りをお絵描き', new_house_path %>
+          <div class="list-block media-list">
+            <ul>
+              <% @favorite_houses.each do |house| %>
+                <%= render 'houses/house', house: house %>
+              <% end %>
+            </ul>
+          </div>
         </div>
       </div>
   </div>

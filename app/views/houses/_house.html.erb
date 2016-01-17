@@ -1,4 +1,4 @@
-<%= link_to house, class: "item-content" do %>
+<%= link_to house, class: "item-content external" do %>
   <div class="item-media">
     <%= image_tag(house.image_url, width: 300) if house.image? %>
   </div>
@@ -7,9 +7,9 @@
       <div class="item-title"><%= house.name %></div>
       <div class="item-after">
         <% if Favorite.find_by(house_id: house.id, user_id: current_user.id) %>
-        <%= link_to image_tag('star10.gif', :border => '0', :alt => 'お気に入り登録',class: "star"), house_unfavorite_path(house), method: :delete, remote: true, class: "houses-#{house.id} rikako" %>
+        <%= link_to image_tag('star10.gif', :border => '0', :alt => 'お気に入り登録',class: "star"), house_unfavorite_path(house), method: :delete, remote: true, class: "houses-#{house.id} rikako external" %>
         <% else %>
-          <%= link_to image_tag('star20.png', :border => '0', :alt => 'お気に入り解除',class: "star"), house_favorite_path(house), method: :post, remote: true, class: "houses-#{house.id} rikako" %>
+          <%= link_to image_tag('star20.png', :border => '0', :alt => 'お気に入り解除',class: "star"), house_favorite_path(house), method: :post, remote: true, class: "houses-#{house.id} rikako external" %>
         <% end %>
         <span class="houses-<%= house.id %>-favorite">
           <%= house.favorites_count %>

@@ -30,6 +30,7 @@ class HousesController < ApplicationController
 
     image_data = base64_conversion(params[:house][:remote_image_url])
     @house.image = image_data
+    @house.user_id = current_user.id
 
     respond_to do |format|
       if @house.save
