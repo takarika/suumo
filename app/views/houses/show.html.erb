@@ -1,19 +1,18 @@
 <p id="notice"><%= notice %></p>
 <div class="page-content">
-    <div class="content-block">
-  <p>
-    <strong>Name:</strong>
-    <%= @house.name %><br>
-    <strong>Image:</strong><br>
-    <%= image_tag(@house.image_url) if @house.image? %>
-  </p>
-  <strong>詳細</strong><br>
-    <%= @house.detail %><br>
-
-  <a href="http://suumo.jp/" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="color: white;background-color: #519C00;" role="button">りかこが間取りを検索</a><br>
-  <%= link_to 'Edit', edit_house_path(@house), class: 'external' %> |
-  <%= link_to 'Destroy', @house, method: :delete, data: { confirm: 'Are you sure?' }, class: "external" %>
-  <%= link_to 'Back', houses_path, class: 'external' %>
-  <br>
+  <div class="content-block">
+    <p>
+      <strong>Name:</strong>
+      <%= @house.name %><br>
+      <strong>Image:</strong><br>
+      <%= image_tag(@house.image_url, width: 300) if @house.image? %>
+    </p>
+    <strong>詳細</strong><br>
+      <%= @house.detail %><br>
+    <a href="http://suumo.jp/" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="color: white;background-color: #519C00;" role="button">りかこが間取りを検索</a><br>
+    <%= link_to 'Edit', edit_house_path(@house), class: 'external' %> |
+    <%= link_to 'Destroy', @house, method: :delete, data: { confirm: 'Are you sure?' }, class: "external" %>
+    <%= link_to 'Back', houses_path, class: 'external' %>
+    <br>
 　</div>
 </div>>
