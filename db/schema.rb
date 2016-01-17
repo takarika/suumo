@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160109092852) do
+ActiveRecord::Schema.define(version: 20160117071004) do
 
   create_table "favorites", force: :cascade do |t|
     t.integer  "user_id",    limit: 4
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20160109092852) do
     t.string   "image",           limit: 255
     t.text     "detail",          limit: 65535
     t.integer  "favorites_count", limit: 4,     null: false
+    t.integer  "user_id",         limit: 4
   end
 
   create_table "users", force: :cascade do |t|

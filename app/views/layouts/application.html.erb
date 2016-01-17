@@ -36,15 +36,11 @@
 
       <div class="navbar">
           <div class="navbar-inner">
-            <div class="left">
-              <a href="#" class="link"></a>
-            </div>
+            <div class="left"></div>
             <div class="center">
-              <a href="http://suumo.jp/" class="link">MADOOMO</a>
+              MADOOMO
             </div>
-            <div class="right">
-              <a href="#" class="link"></a>
-            </div>
+            <div class="right"></div>
           </div>
       </div>
 
@@ -58,6 +54,15 @@
     <div class="toolbar-inner">
       <%= link_to houses_path, class: 'tab-link active' do %>
         <i class="icon tabbar-demo-icon-1"></i> <span class="tabbar-label">間取り</span>
+      <% end %>
+
+      <% if current_user %>
+        <%= link_to new_house_path, class: 'tab-link' do %>
+          <i class="icon tabbar-demo-icon-2"></i><span class="tabbar-label">投稿</span>
+        <% end %>
+        <%= link_to user_path(current_user), class: 'tab-link' do %>
+          <i class="icon tabbar-demo-icon-3"></i><span class="tabbar-label">Mypage</span>
+        <% end %>
       <% end %>
     </div>
   </div>

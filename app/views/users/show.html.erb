@@ -1,29 +1,22 @@
-<%= link_to '一覧に戻る', houses_path %>
-
-<div class="tab-menu">
-  <ul>
-    <li id="left" class="selected">自分が投稿した</li>
-    <li id="right">お気に入りし</li>
-  </ul>
-
-  <div class="contents">
-    <div class="left">
-      <div class="list-block media-list">
-      <% @favorite_houses.each do |house| %>
-        <%= render 'houses/house', house: house %>
-      <% end %>
-      </div>
+<div class="page-content">
+  <div class="content-block">
+    <div class="buttons-row">
+      <a href="#tab1" class="tab-link active button"class="show-tab-1">お気に入り</a>
+      <a href="#tab2" class="tab-link button"class="show-tab-2">投稿一覧</a>
     </div>
-    <div class="right">
-      <div class="list-block media-list">
-      <% @favorite_houses.each do |house| %>
-        <%= render 'houses/house', house: house %>
-      <% end %>
-      </div>  
+
+    <div class="tabs">
+      <div id="tab1" class="tab active">
+        <div class="content-block">
+          <% @houses.each do |house| %>
+            <%= render 'houses/house', house: house %>
+          <% end %>
+        </div>
+      </div>
+      <div id="tab2" class="tab">
+        <div class="content-block">
+          <%= link_to '間取りをお絵描き', new_house_path %>
+        </div>
+      </div>
   </div>
 </div>
-
-
-
-
-<%= link_to '一覧に戻る', houses_path %>
