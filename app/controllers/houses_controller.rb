@@ -6,7 +6,7 @@ class HousesController < ApplicationController
   # GET /houses
   # GET /houses.json
   def index
-    @houses = House.all
+    @houses = House.all.order('updated_at DESC')
   end
 
   # GET /houses/1
